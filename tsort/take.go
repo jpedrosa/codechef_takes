@@ -11,12 +11,13 @@ import (
 
 func main() {
   ios := bufio.NewReader(os.Stdin)
-  nn := []int{}
-  a, err := ios.ReadBytes('\n')
-  for err == nil {
+  a, _ := ios.ReadBytes('\n')
+  count, _ := strconv.Atoi(string(a[:len(a) - 1]))
+  nn := make([]int, count)
+  for i := 0; i < count; i++ {
+    a, _ = ios.ReadBytes('\n')
     n, _ := strconv.Atoi(string(a[:len(a) - 1])) // Trim NewLine
-    nn = append(nn, n)
-    a, err = ios.ReadBytes('\n')
+    nn[i] = n
   }
   sort.Ints(nn)
   for _, n := range nn { fmt.Println(n) }
