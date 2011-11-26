@@ -1,0 +1,19 @@
+time ./take.rb < sample.txt > r.txt
+
+real	0m0.212s
+user	0m0.192s
+sys	0m0.016s
+time ./take.dart < sample.txt > d.txt
+
+real	0m1.916s
+user	0m1.416s
+sys	0m0.496s
+8g take.go && 8l -o gotake take.8 && time ./gotake < sample.txt > g.txt
+
+real	0m0.890s
+user	0m0.452s
+sys	0m0.436s
+Confirm:
+diff -u r.txt sample_output.txt
+diff -u d.txt sample_output.txt
+diff -u g.txt sample_output.txt
