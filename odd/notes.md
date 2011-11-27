@@ -1,1 +1,22 @@
+
+First try times:
+
+    time ./take.rb < sample.txt > r.txt
+
+    real	0m1.640s
+    user	0m1.620s
+    sys 	0m0.008s
+
+    time ./take.dart < sample.txt > d.txt
+
+    real	0m2.101s
+    user	0m2.012s
+    sys 	0m0.088s
+
+    8g take.go && 8l -o gotake take.8 && time ./gotake < sample.txt > g.txt
+
+    real	0m0.091s
+    user	0m0.076s
+    sys 	0m0.012s
+
 Talk about noteworthy findings here. Such as best current times.
